@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "RTLHelper.h"
 
 /// "UINavigation+FDFullscreenPopGesture" extends UINavigationController's swipe-
 /// to-pop behavior in iOS 7+ by supporting fullscreen pan gesture. Instead of
@@ -33,6 +34,9 @@
 
 /// The gesture recognizer that actually handles interactive pop.
 @property (nonatomic, strong, readonly) UIPanGestureRecognizer *fd_fullscreenPopGestureRecognizer;
+
+/// The RTL gesture recognizer that actually handles interactive pop.
+@property (nonatomic, strong, readonly) UIScreenEdgePanGestureRecognizer *fd_rtlFullscreenPopGestureRecognizer;
 
 /// A view controller is able to control navigation bar's appearance by itself,
 /// rather than a global way, checking "fd_prefersNavigationBarHidden" property.
@@ -59,7 +63,5 @@
 /// gesture. 0 by default, which means it will ignore this limit.
 @property (nonatomic, assign) CGFloat fd_interactivePopMaxAllowedInitialDistanceToLeftEdge;
 
-- (void)fd_viewWillDisappear:(BOOL)animated;
-- (void)fd_viewWillAppear:(BOOL)animated;
-
 @end
+
